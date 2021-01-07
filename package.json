@@ -1,0 +1,41 @@
+{
+  "name": "amazon-api",
+  "private": true,
+  "version": "0.0.1",
+  "description": "a Sails application",
+  "keywords": [],
+  "dependencies": {
+    "@sailshq/lodash": "^3.10.3",
+    "sails": "^1.4.0",
+    "sails-hook-orm": "^3.0.1",
+    "sails-hook-sockets": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "5.16.0",
+    "husky": "^4.3.7",
+    "nodemon": "^2.0.7",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1"
+  },
+  "scripts": {
+    "start": "NODE_ENV=production nodemon app.js",
+    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
+    "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
+    "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gbs4ever/amazon-api.git"
+  },
+  "author": "gbs4ever",
+  "license": "MIT",
+  "engines": {
+    "node": "^15.5"
+  }
+}
